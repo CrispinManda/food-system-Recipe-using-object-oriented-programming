@@ -21,7 +21,6 @@ class Recipe {
         $this->cookingEquipment = $cookingEquipment;
     }
 }
-
 class RecipeDisplay {
     /* Creating a new array called recipes */
     public $recipes;
@@ -51,11 +50,11 @@ class RecipeDisplay {
             <div class="row">
                 <?php if (count($filtered_recipes) > 0): ?>
                     <?php foreach ($filtered_recipes as $recipe): ?>
-                        <div class="col-md-4 mb-3">
+                        <div class="col-lg-4 col-md-6 mb-3">
                             <a href="view.php?recipe=<?= $recipe->name ?>" class="recipe text-decoration-none">
                                 <img src="<?= $recipe->image_url ?>" class="img-fluid" alt= "<?= $recipe->name ?>">
                                 <h5 class="mt-2"><?= $recipe->name ?></h5>
-                                <p>Prep: <?= $recipe->prep_time ?> min | Cook: <?= $recipe->cook_time ?> min</p>
+                                
                             </a>
                         </div>
                     <?php endforeach; ?>
@@ -87,7 +86,7 @@ class RecipeDisplay {
         }
         echo '</div>';
         echo '</div>';
+        
     }
 }
 
-?>

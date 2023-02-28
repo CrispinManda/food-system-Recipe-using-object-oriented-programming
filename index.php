@@ -14,24 +14,29 @@ include 'templates/header.php';
         </div>
       </div>
     </header>
-    <!-- end of header -->
-    <section class="recipes-container d-flex flex-wrap">
-
-    <!-- tag container -->
-    <?php 
-    $recipeDisplay = new RecipeDisplay($recipe_objects);
-    $recipeDisplay->displayTags();
-    ?>
-    <!-- end of tag container -->
-
-    <div class="d-flex flex-wrap">
-        <?php
-            $recipe_display = new RecipeDisplay($recipe_objects);
-            $recipe_display->displayRecipes();
-        ?>
+   <!-- end of header -->
+<section class="recipes-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <!-- tag container -->
+                <?php 
+                $recipeDisplay = new RecipeDisplay($recipe_objects);
+                $recipeDisplay->displayTags();
+                ?>
+                <!-- end of tag container -->
+            </div>
+            <div class="col-lg-9">
+                <div class="row">
+                    <?php
+                        $recipe_display = new RecipeDisplay($recipe_objects);
+                        $recipe_display->displayRecipes();
+                    ?>
+                </div>
+            </div>
+        </div>
     </div>
-
-</section>
+</section> 
 
   </main>
   <!-- end of main -->
